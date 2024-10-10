@@ -1,0 +1,115 @@
+.header-wrapper {
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color-light);
+  backdrop-filter: blur(20px);
+  z-index: 3;
+  color: var(--semi-white);
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 250px !important;
+}
+
+/* logo styles */
+.logo-wrapper {
+  position: absolute;
+  z-index: 5;
+  right: max(9%, calc(50vw - 790px));
+  top: 5px;
+}
+.logo {
+  width: 180px;
+}
+.hotelName {
+  font-size: 28px;
+  font-family: "Arghavan";
+  color: var(--gold-color);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), -2px -2px 1px rgba(0, 0, 0, 1);
+  position: fixed;
+  top: 5px;
+}
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  color: var(--gold-color);
+}
+.star-sm {
+  font-size: 10px;
+}
+.star-md {
+  font-size: 20px;
+}
+.star-lg {
+  font-size: 30px;
+}
+/* logo styles end */
+
+/* header left side styles */
+.header-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+}
+.login-btn {
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.icon-btn {
+  color: #fff;
+}
+.userInfo-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0px 20px;
+}
+.userInfo-container a {
+  text-decoration: none;
+  color: #fff;
+}
+.userInfo-container a:hover {
+  color: var(--gold-color);
+}
+.header-profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  color: var(--bg-color-white);
+}
+.username-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100px;
+}
+.username-role {
+  font-size: 0.8rem;
+  color: var(--bg-color-white);
+  border-top: 1px solid var(--bg-color-white);
+  width: 100%;
+}
+
+.cart-branch {
+  color: #fff;
+  background-color: goldenrod;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  left: -20px;
+}
+
+/* header left side styles end */
