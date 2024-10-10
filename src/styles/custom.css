@@ -52,17 +52,10 @@ body{
 	height: 100%;
 	margin: 0 auto;
   max-width: 1600px;
-	min-width: 468px;
+	min-width: 320px;
   padding: 10px;
 	font-size: 1rem;
 	line-height: 1.2rem;
-	/* position: relative; */
-}
-
-.main-container{
-	/* width: 90%; */
-  /* max-width: 1200px; */
-  /* padding: 10px; */
 }
 
 /* container styles end */

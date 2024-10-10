@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CiViewColumn, CiViewTable, CiGrid41 } from "react-icons/ci";
+import { CiSquarePlus, CiSquareMinus } from "react-icons/ci";
 import Table from "./Table";
 import RowGridView from "./RowGridView";
 import "./pagination.css";
@@ -11,14 +12,22 @@ export default function Pagination({
   photoes,
   onlyTable,
 }) {
-  const [view, setView] = useState("table");
-  const limit = 10;
-  const pageNumbers = Array.from(Array(Math.ceil(body.length / limit)).keys());
+	let defaultView = 'grid'
+	if(onlyTable){
+		defaultView = 'table'
+	}
+  const [view, setView] = useState(defaultView);
   const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(5);
   const endIndex = page * limit;
   const startIndex = endIndex - limit;
   const data = body.slice();
   const paginatedData = data.slice(startIndex, endIndex);
+	let paginatedPhotoes = [];
+  if(photoes){
+		paginatedPhotoes = photoes.slice(startIndex, endIndex);
+	}
+  const pageNumbers = Array.from(Array(Math.ceil(body.length / limit)).keys());
 
   const setPageNum = (event) => {
     setPage(Number(event.target.innerHTML));
@@ -26,34 +35,55 @@ export default function Pagination({
 
   return (
     <>
-      {!onlyTable && (
-        <div className="view-container">
-          <CiViewTable
-            className="view-item"
-            title="نمایش جدولی"
-            onClick={() => setView("table")}
-          />
-          <CiViewColumn
-            className="view-item"
-            title="نمایش افقی"
-            onClick={() => setView("row")}
-          />
-          <CiGrid41
-            className="view-item"
-            title="نمایش برگه ای"
-            onClick={() => setView("grid")}
-          />
+      <div className="view-filter-wrapper">
+        {!onlyTable && (
+          <div className="view-container">
+            <CiViewTable
+              className="view-item"
+              title="نمایش جدولی"
+              onClick={() => setView("table")}
+            />
+            <CiViewColumn
+              className="view-item"
+              title="نمایش افقی"
+              onClick={() => setView("row")}
+            />
+            <CiGrid41
+              className="view-item"
+              title="نمایش برگه ای"
+              onClick={() => setView("grid")}
+            />
+          </div>
+        )}
+        <div className="table-filter">
+          <span>تعداد ردیف هر صفحه</span>
+          <div className="counter-wrapper">
+            <button
+              onClick={() => setLimit((prev) => prev + 1)}
+              disabled={limit >= 10}
+            >
+              <CiSquarePlus />
+            </button>
+            <span>{limit}</span>
+            <button
+              onClick={() => setLimit((prev) => prev - 1)}
+              disabled={limit <= 1}
+            >
+              <CiSquareMinus />
+            </button>
+          </div>
         </div>
-      )}
-
+      </div>
       {view === "table" ? (
+				<div className="table-controller">
         <Table title={title} body={paginatedData} actions={actions} />
+				</div>
       ) : (
         <RowGridView
           title={title}
           body={paginatedData}
           actions={actions}
-          photoes={photoes}
+          photoes={paginatedPhotoes}
           view={view}
         />
       )}

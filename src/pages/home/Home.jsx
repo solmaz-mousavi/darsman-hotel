@@ -42,7 +42,6 @@ export default function Home() {
 
   return (
     <div className="home-container">
-			<CircleSpinner/>
       <aside className="sidebar-container">
         <h2 className="main-title">اینجا محل تبلیغ شماست</h2>
 
@@ -59,8 +58,12 @@ export default function Home() {
           advertisements.map((ad) => (
             <div key={ad.id}>
               <h4 className="title">{ad.title}</h4>
-              <img src={ad.image} alt="advertisement" />
-              <p>{ad.body}</p>
+              <div className="advertisement">
+                <div>
+                  <img src={ad.image} alt="advertisement" className="advertisement-image" />
+                </div>
+                <p>{ad.body}</p>
+              </div>
             </div>
           ))}
       </aside>

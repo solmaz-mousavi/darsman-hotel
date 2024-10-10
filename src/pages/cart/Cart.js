@@ -167,7 +167,7 @@ export default function Cart() {
   return (
     <div className="cart-wrapper">
       <div className="roomCart-wrapper">
-        <Pagination title={roomTitle} body={roomBody} actions={roomActions}  photoes={foodPhotoes}/>
+        <Pagination title={roomTitle} body={roomBody} actions={roomActions}  photoes={roomPhotoes}/>
       </div>
       <div className="foodCart-wrapper">
         <Pagination title={foodTitle} body={foodBody} actions={foodActions} photoes={foodPhotoes} />

@@ -18,7 +18,6 @@ function RowGridView({ title, body, actions, photoes, view }) {
     likeInfo[row] = !likeInfo[row];
     setLike(likeInfo);
   };
-
   {
     if (body.length === 0) {
       return <div className="errorBox">اطلاعاتی جهت نمایش وجود ندارد</div>;
@@ -28,7 +27,7 @@ function RowGridView({ title, body, actions, photoes, view }) {
     <div>
       <div className={`${view==="row" ? "rows-container" : "grids-container"}`}>
         {photoes.map((photo, row) => (
-          <div className="product-container">
+          <div className="product-container" key={'mainRow' + row}>
             <div className="photo-container">
               {photo === "" ? (
                 <MdNoPhotography className="product-image-withoutphoto"/>
@@ -39,12 +38,14 @@ function RowGridView({ title, body, actions, photoes, view }) {
               <div className="score" dir="ltr">
                 {scores.map((star) => {
                   const score = iterableBody[row][1].payload.score;
-                  if (score >= star) {
-                    return <FaStar />;
+									if(!score){
+										return <></>
+									} else if (score >= star) {
+                    return <FaStar key={star + 'star' + score} />;
                   } else if (star - score < 1) {
-                    return <FaStarHalfAlt />;
+                    return <FaStarHalfAlt key={star + 'star' + score} />;
                   } else {
-                    return <FaRegStar />;
+                    return <FaRegStar key={star + 'star' + score} />;
                   }
                 })}
               </div>
@@ -59,14 +60,14 @@ function RowGridView({ title, body, actions, photoes, view }) {
 
             <div className="product-details">
               {title.map((item, titleIndex) => (
-                <p>{`${item} : ${iterableBody[row][1].tableData[titleIndex]}`}</p>
+                <p key={titleIndex + item}>{`${item} : ${iterableBody[row][1].tableData[titleIndex]}`}</p>
               ))}
             </div>
               {actions.length > 0 && (
             <div className="product-action-container">
                 {actions.map((action, index) => (
                   <button
-                    key={body[row].payload.id + "btn" + index}
+                    key={action.tooltip + index}
                     className={`table-btn ${action.class}`}
                     title={action.tooltip}
                     onClick={() => {

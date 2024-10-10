@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import './styles/custom.css';
 import './styles/cms.css';
+import './styles/responsive.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

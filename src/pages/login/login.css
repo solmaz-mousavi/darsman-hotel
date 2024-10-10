@@ -9,9 +9,7 @@
 .buttons-container{
 	justify-content: center;
 }
-.buttons-container button{
-	width: 300px;
-}
+
 
 .login-link{
 	display: block;

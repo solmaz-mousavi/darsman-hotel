@@ -3,7 +3,7 @@ import MenuThumbnail from '../menuThumbnail/MenuThumbnail';
 import { CiViewColumn, CiGrid41 } from "react-icons/ci";
 
 function Menu({ menuList, actions }) {
-  const [view, setView] = useState("row");
+  const [view, setView] = useState("grid");
 
   {
     if (menuList.length === 0) {

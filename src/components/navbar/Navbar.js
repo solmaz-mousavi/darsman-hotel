@@ -2,15 +2,16 @@ import React from "react";
 import "./navbar.css";
 import { NavLink } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({setShowHamMenu}) {
   const localStorageData = JSON.parse(localStorage.getItem("user"));
   return (
     <div>
       <ul className="navbar-container">
-        <li className="navbar-item">
+        <li className="navbar-item" >
           <NavLink
             to="./"
             className={(link) => (link.isActive ? "active" : "")}
+						onClick={()=> setShowHamMenu(false)}
           >
             صفحه اصلی
           </NavLink>
@@ -20,6 +21,7 @@ export default function Navbar() {
           <NavLink
             to="./roomSearch"
             className={(link) => (link.isActive ? "active" : "")}
+						onClick={()=> setShowHamMenu(false)}
           >
             رزرو اتاق
           </NavLink>
@@ -29,6 +31,7 @@ export default function Navbar() {
           <NavLink
             to="./foodSearch"
             className={(link) => (link.isActive ? "active" : "")}
+						onClick={()=> setShowHamMenu(false)}
           >
             سفارش غذا
           </NavLink>
@@ -38,6 +41,7 @@ export default function Navbar() {
           <NavLink
             to="./userPanel/userInfo"
             className={(link) => (link.isActive ? "active" : "")}
+						onClick={()=> setShowHamMenu(false)}
           >
             پنل کاربری
           </NavLink>
@@ -47,6 +51,7 @@ export default function Navbar() {
             <NavLink
               to="./adminPanel/rooms"
               className={(link) => (link.isActive ? "active" : "")}
+						onClick={()=> setShowHamMenu(false)}
             >
               پنل مدیریتی
             </NavLink>

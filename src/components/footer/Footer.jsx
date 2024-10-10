@@ -62,7 +62,7 @@ export default function Footer() {
       </div>
       <div className="copyRight-container">
         <MdCopyright />
-        <span>کلیه حقوق این سایت متعلق به هتل درسمن می باشد </span>
+        <p>کلیه حقوق این سایت متعلق به هتل درسمن می باشد </p>
       </div>
     </>
   );

@@ -35,13 +35,13 @@ export default function RoomReservations() {
     );
   }
 
-  const deleteHandler = async (roomReservationID) => {
+  const deleteHandler = async (roomReservationInfo) => {
     swal({
       text: "آیا از حذف آیتم اطمینان دارید؟",
       buttons: ["خیر", "بله"],
     }).then((res) => {
       if (res) {
-        deleteRoomReservation(roomReservationID);
+        deleteRoomReservation(roomReservationInfo);
       }
     });
   };

@@ -19,6 +19,9 @@
 .footer-item__info {
   width: 30%;
 }
+.footer-item__location iframe {
+  width: 100%;
+}
 .footer-container h5 {
   font-size: 0.9rem;
   font-weight: normal;

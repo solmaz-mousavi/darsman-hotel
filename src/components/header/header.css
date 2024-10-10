@@ -14,7 +14,20 @@
   align-items: center;
   padding-right: 250px !important;
 }
-
+.hamMenu-icon {
+  display: none;
+  font-size: 2rem;
+  z-index: 10;
+}
+.showMenu {
+  display: block;
+}
+.hideMenu {
+  display: block;
+}
+.navbar-container {
+  transition: all 0.5s ease;
+}
 /* logo styles */
 .logo-wrapper {
   position: absolute;

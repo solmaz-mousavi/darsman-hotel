@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export default function AdminPanelSidebar() {
   return (
     <div className="admin-panel__navbar-container">
-      <ul>
+      <ul className="admin-panel__navbar">
         <li className="admin-panel__navbar-item">
           <NavLink
             to="users"

@@ -109,7 +109,7 @@ export default function FoodSearch() {
   };
 
   const detailHandler = (foodInfo) => {
-    navigate(`/foodDetails/${foodInfo.id}`);
+    navigate(`/foodDetails/${foodInfo.foodID}`);
   };
 
   const addItemToCart = (newItem) => {

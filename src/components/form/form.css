@@ -5,6 +5,9 @@
   margin-top: 20px;
   font-size: 0.9rem;
 }
+.input-wrapper input{
+	width: 100%;
+}
 .inputs-container {
   display: flex;
   justify-content: center;

@@ -127,7 +127,7 @@ const buttons = [
 	{
 		title: "جستجو",
 		type: "submit",
-		className: "btn btn-submit",
+		className: "btn btn-submit btn-lg",
 	},
   ];
 

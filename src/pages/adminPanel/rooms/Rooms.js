@@ -45,7 +45,7 @@ export default function Rooms({ setSelectedRoom }) {
     );
   }
 
-  const deleteHandler = async (roomID) => {
+  const deleteHandler = async (roomInfo) => {
     swal({
       text: "آیا از حذف آیتم اطمینان دارید؟",
       buttons: ["خیر", "بله"],
@@ -53,7 +53,7 @@ export default function Rooms({ setSelectedRoom }) {
       if (res) {
         if (roomReservations) {
           const delFlag = roomReservations.find(
-            (res) => res.roomID === roomID.id
+            (res) => res.roomInfo === roomInfo.id
           );
           if (delFlag) {
             swal({
@@ -61,7 +61,7 @@ export default function Rooms({ setSelectedRoom }) {
               buttons: "باشه",
             });
           } else {
-            deleteRoom(roomID);
+            deleteRoom(roomInfo);
           }
         }
       }

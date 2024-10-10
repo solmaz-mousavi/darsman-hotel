@@ -7,8 +7,10 @@ import { MdLogout } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 import logo from "../../images/1.png";
 import { Link } from "react-router-dom";
+import { MdMenu } from "react-icons/md";
 
 export default function Header() {
+  const [showHamMenu, setShowHamMenu] = useState(false);
   const localStorageData = JSON.parse(localStorage.getItem("user"));
   const roomLocalStorageData =
     JSON.parse(localStorage.getItem("roomCart")) || [];
@@ -25,8 +27,10 @@ export default function Header() {
   return (
     <>
       <div className="logo-wrapper">
-        <img className="logo" src={logo} alt="hotel" />
-        <p className="hotelName">هتل درســـــــمن</p>
+        <Link to="/">
+          <img className="logo" src={logo} alt="hotel" />
+          <p className="hotelName">هتل درســـــــمن</p>
+        </Link>
         <div className="stars">
           <FaStar className="star-sm" />
           <FaStar className="star-md" />
@@ -37,7 +41,13 @@ export default function Header() {
       </div>
       <header className="header-wrapper">
         <div className="container header-container">
-          <Navbar />
+          <MdMenu
+            className="hamMenu-icon"
+            onClick={() => setShowHamMenu((prev) => !prev)}
+          />
+          <div className={`${showHamMenu ? "showMenu" : "hideMenu"}`}>
+            <Navbar setShowHamMenu={setShowHamMenu} />
+          </div>
           <div className="header-left">
             {localStorageData ? (
               <div className="userInfo-container">

@@ -14,7 +14,6 @@ function Table({ title, body, actions }) {
   if (foodsIsLoading) {
     return <CircleSpinner />;
   }
-
   if (foodsError) {
     return (
       <div className="error">
@@ -23,14 +22,11 @@ function Table({ title, body, actions }) {
       </div>
     );
   }
-
-
   {
     if (body.length === 0) {
       return <div className="errorBox">اطلاعاتی جهت نمایش وجود ندارد</div>;
     }
   }
-
   return (
     <div>
       <table className="table-container">

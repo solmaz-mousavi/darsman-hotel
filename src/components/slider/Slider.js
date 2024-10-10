@@ -7,7 +7,7 @@ export default function Slider({ slides }) {
   return (
     <Swiper slidesPerView={1} pagination={{ clickable: true }} loop={true}>
       {slides.map((slide) => (
-        <SwiperSlide key={slide.id}>
+        <SwiperSlide key={slide.id + slide.image}>
           <img src={slide.image} alt="darsman hotel" className="slide-img" />
         </SwiperSlide>
       ))}

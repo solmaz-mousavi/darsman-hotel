@@ -79,11 +79,11 @@ export default function RoomDetails() {
           <div className="score-container">
             {scores.map((star) => {
               if (score >= star) {
-                return <FaStar />;
+                return <FaStar key={star + 'star' + score} />;
               } else if (star - score < 1) {
-                return <FaStarHalfAlt />;
+                return <FaStarHalfAlt key={star + 'star' + score} />;
               } else {
-                return <FaRegStar />;
+                return <FaRegStar key={star + 'star' + score} />;
               }
             })}
           </div>
