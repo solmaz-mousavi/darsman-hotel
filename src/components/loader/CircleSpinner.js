@@ -1,12 +1,12 @@
 import React from "react";
-import { VscLoading } from "react-icons/vsc";
+import { MdOutlineDownloading } from "react-icons/md";
 
 export default function CircleSpinner() {
   return (
     <div className="loader-container">
       <div className="loader">
-        <VscLoading className="circle"/>
-        <span>... Loading</span>
+        <MdOutlineDownloading />
+        <p dir="ltr">Loading ...</p>
       </div>
     </div>
   );
